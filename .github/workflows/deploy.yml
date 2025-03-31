@@ -8,6 +8,7 @@ env:
   MONGODB_DB_NAME: gha-demo #workflow level passing for all jobs
 jobs:
   test:
+    environment: testing   # testing environment secrets will used by mongodb user and passwd
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.ugq87nz.mongodb.net # we can also pass in job level
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
